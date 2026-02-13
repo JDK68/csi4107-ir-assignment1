@@ -15,7 +15,7 @@
 - Student number:300250903
 
 ### Task Division
-- **Jad Kebal — Dataset + Preprocessing **:
+- **Jad Kebal — Dataset + Preprocessing**:
   - Parse corpus/queries from .jsonl files
   - Stopword list, tokenization, stopword removal
 
@@ -24,7 +24,7 @@
   - Store TF per document per term
   - Write README
 
-- **Brooklyn McClelland - Retrieval & Ranking + Integration **:
+- **Brooklyn McClelland - Retrieval & Ranking + Integration**:
   - BM25 or cosine similarity scoring
   - Main pipeline script tying all steps together
 
