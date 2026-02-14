@@ -25,7 +25,7 @@
   - Write README
 
 - **Brooklyn McClelland - Retrieval & Ranking + Integration**:
-  - BM25 similarity scoring
+  - Cosine similarity scoring
   - Main pipeline script tying all steps together
 
 - **Solin Maaroof - Indexing + README**:
