@@ -7,20 +7,32 @@
 
 - Name: Jad Kebal
 - Student number: 300329290
-- Name:  
-- Student number: 
-- Name:  
-- Student number: 
-- Name:  
-- Student number: 
+- Name: Gini Sheja  
+- Student number: 300222140
+- Name: Brooklyn McClelland
+- Student number: 300311745
+- Name: Solin Maaroof
+- Student number:300250903
 
 ### Task Division
-- **Jad Kebal**:
-  - Step 1: Preprocessing
-  - Step 2: Indexing
-  - Dataset setup (Scifact)
-  - Sanity checks and verification scripts
-   
+- **Jad Kebal — Dataset + Preprocessing**:
+  - Parse corpus/queries from .jsonl files
+  - Stopword list, tokenization, stopword removal
+
+- **Gini Sheja - Indexing + README**:
+  - Build the inverted index structure
+  - Store TF per document per term
+  - Write README
+
+- **Brooklyn McClelland - Retrieval & Ranking + Integration**:
+  - BM25 similarity scoring
+  - Main pipeline script tying all steps together
+
+- **Solin Maaroof - Indexing + README**:
+  - Compute and store document frequencies (DF)
+  - Compute and store document lengths
+  - Run experiments + Results file + trec_eval + README
+
 ---
 
 ## Dataset
