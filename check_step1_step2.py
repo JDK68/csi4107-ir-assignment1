@@ -2,6 +2,7 @@ import os
 from parser import parse_documents_from_file, parse_queries_from_file, parse_qrels_from_tsv
 from preprocessing import load_stopwords_from_file, preprocess_documents, preprocess_queries
 from indexing import build_inverted_index
+from retrieval_and_ranking import compute_similarity_scores
 
 DATASET_DIR = os.path.join("datasets", "scifact")
 CORPUS_PATH = os.path.join(DATASET_DIR, "corpus.jsonl")
@@ -59,6 +60,14 @@ def main():
     print("\nQuery sample:")
     print("num:", q0["num"])
     print("TOKENS:", q0.get("TOKENS", [])[:30])
+
+    # test retrieval_and_ranking
+    print("\ntesting retrieval_and_ranking")
+    q1 = queries[1]
+    print("num:", q1["num"])
+    print("TOKENS:", q1.get("TOKENS", [])[:30])
+    compute_similarity_scores(q1, index, docs)
+
 
 
 if __name__ == "__main__":

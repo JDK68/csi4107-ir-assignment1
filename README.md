@@ -20,8 +20,7 @@
   - Step 2: Indexing
   - Dataset setup (Scifact)
   - Sanity checks and verification scripts
-
-
+   
 ---
 
 ## Dataset
@@ -106,6 +105,21 @@ Term: `microstructural`
 - Document frequency (DF): **6**
 - Example postings (doc_id → tf):
 First 5 postings (doc_id -> tf): [('4983', 2), ('1412089', 1), ('1472815', 1), ('3205945', 8), ('22107641', 3)]
+
+## Step 3 – Retrieval and Ranking (Implemented)
+
+### Functionality
+The retrieval and ranking module uses the inverted index to calculate cosine similarity scores between a query and each document  
+
+The following steps are implemented:
+
+1. Retrieving documents containing at least one query word - other documents are discarded
+2. Calculating the tf, idf, and norms, and using these values to calculate the cosine similarity score
+3. Returning the ranked doc ids with their cosine similarity scores
+
+### Output
+For each query:
+- `ranked_docs`: a list of document ids with their cosine similarity scores
 
 ---
 
