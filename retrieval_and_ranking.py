@@ -64,10 +64,15 @@ def compute_similarity_scores(query, inverted_index, docs):
     for doc_id in docs_with_query:
         dot_product = 0
         for token in tokens:
+            if token not in inverted_index:
+                continue
             query_weight = query_weights.get(token)
+            if query_weight is None:
+                continue
             d_tf = inverted_index[token].get(doc_id, 0)
             doc_weight = (d_tf / doc_max_tf[doc_id]) * query_weight
             dot_product = dot_product + (doc_weight * query_weight)
+        if query_norm > 0 and doc_norms.get(doc_id, 0) > 0:
             sim_value = dot_product / (query_norm * doc_norms[doc_id])
             sim_values[doc_id] = sim_value
 

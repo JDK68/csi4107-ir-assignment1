@@ -1,15 +1,12 @@
 from __future__ import annotations
-
 from collections import Counter, defaultdict
 from typing import Dict, List, Tuple
-
 
 # Inverted index type:
 # index[term][doc_id] = tf
 InvertedIndex = Dict[str, Dict[str, int]]
 
-
-def build_inverted_index(documents: List[dict]) -> Tuple[InvertedIndex, Dict[str, int], Dict[str, int]]:
+def build_inverted_index(documents: List[dict], token_field: str = "TOKENS") -> Tuple[InvertedIndex, Dict[str, int], Dict[str, int]]:
     """
     Step 2: Build inverted index from preprocessed tokens.
 
@@ -24,7 +21,7 @@ def build_inverted_index(documents: List[dict]) -> Tuple[InvertedIndex, Dict[str
 
     for doc in documents:
         doc_id = str(doc["DOCNO"])
-        tokens = doc.get("TOKENS", [])
+        tokens = doc.get(token_field, [])
         doc_lengths[doc_id] = len(tokens)
 
         tf = Counter(tokens)
